@@ -9,7 +9,7 @@ Minimum feature set:
 * Search for movies in the database.
 * Edit the grade (from 1 to 5) of a movie and have it updated in the database.
 
-Things we will look at and perhaps dicuss:
+In addition to the solution meeting the minimum requirements, we will also assess things such as:
 * Throttle requests in a manageable way.
 * Handle race conditions.
 * Ensure that you're utilizing TypeScript.
