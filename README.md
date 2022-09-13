@@ -21,6 +21,15 @@ The delivery of your solution to us should be in the form of a repository. Priva
 In this repository we have provided you with a boilerplate that you can use to start if you like.
 But feel free to change it and add the tools/framework etc to your liking.
 
+## Getting started
+
+Make sure you have [Node.js](https://nodejs.org/en/download/) installed and then run
+
+```
+npm install
+npm start
+```
+
 ## Documentation
 
 For the API documentation it's available from [json-server](https://www.npmjs.com/package/json-server).
