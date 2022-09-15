@@ -1,11 +1,12 @@
-import {MoviesService} from './movies.service'
-import {Component} from '@angular/core';
+import {Observable, Subscription} from 'rxjs';
+import {MoviesService} from './movies.service';
+import {Component, OnDestroy} from '@angular/core';
 
 @Component({ // declarator function: how this component works.
   selector: 'movies', // CSS selector
   template: `
-    <h2>{{ getTitle() }}<h2>
-    <ul>
+    <h2> Movies: <h2>
+    <ul style="font-size:16px">
       <li *ngFor="let movie of movies">
         Title: {{movie.title}},
         Grade: {{movie.grade}}
@@ -15,14 +16,16 @@ import {Component} from '@angular/core';
     // directive that modifies the structure of a dom, preface with *
 })
 
-export class MoviesComponent {
-  constructor(service: MoviesService) { // initiate service so we can unit test, otherwise too tightly coupled
-    this.movies = service.getMovies();
+export class MoviesComponent implements OnDestroy {
+  subscription: Subscription;
+  movies: {id: number, grade: number, title: string}[];
+  constructor(private movieService: MoviesService) { // initiate service so we can unit test, otherwise too tightly coupled
+    this.movies = [];
+    this.subscription = movieService.getMovies().subscribe((resp) => {
+      this.movies = resp;
+    });
   }
-  movies;
-  title = "Rated movies so far:";
-  getTitle() {
-    return this.title;
-  } 
-
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
+  }
 }

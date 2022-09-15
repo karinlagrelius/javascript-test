@@ -1,14 +1,20 @@
+import { SearchBoxComponent } from './searchBox.component';
 import { MoviesService } from './movies.service';
 import { MoviesComponent } from './movies.component';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import {Observable, Subscription} from 'rxjs';
+
+
+// FormsModule, mdinputmodule
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesComponent
+    MoviesComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule
