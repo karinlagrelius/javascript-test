@@ -16,3 +16,6 @@ With Node.js and angular-cli from rottenBananas repository:
 ng serve
 ```
 go to: http://localhost:4200/
+
+
+<img src="./screenshot.png">
