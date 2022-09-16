@@ -5,10 +5,9 @@ import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import {Observable, Subscription} from 'rxjs';
-
-
-// FormsModule, mdinputmodule
+import { Observable, Subscription } from 'rxjs';
+// import { MatInputModule } from '@angular/material/input';
+// FormsModule
 
 @NgModule({
   declarations: [
