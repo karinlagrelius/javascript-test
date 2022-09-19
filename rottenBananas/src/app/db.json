@@ -2,37 +2,37 @@
   "videos": [
     {
       "id": 1,
-      "grade": 3,
+      "grade": 4,
       "title": "Joker"
     },
     {
       "id": 2,
-      "grade": 4,
+      "grade": 3,
       "title": "Hidden figures"
     },
     {
       "id": 3,
-      "grade": 1,
+      "grade": 2,
       "title": "Kingpin"
     },
     {
       "id": 4,
-      "grade": 5,
+      "grade": 4,
       "title": "Parasite"
     },
     {
       "id": 5,
-      "grade": 3,
+      "grade": 5,
       "title": "Call me by your name"
     },
     {
       "id": 6,
-      "grade": 4,
+      "grade": 0,
       "title": "Gone girl"
     },
     {
       "id": 7,
-      "grade": 2,
+      "grade": 5,
       "title": "Hot fuzz"
     }
   ]

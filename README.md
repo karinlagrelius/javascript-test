@@ -15,7 +15,12 @@ With Node.js and angular-cli from rottenBananas repository:
 ```
 ng serve
 ```
-go to: http://localhost:4200/
-
+and json-server:
+```
+json-server --watch db.json
+```
+go to: http://localhost:4200/ for the application
+and
+go to: http://localhost:3000/videos for the database
 
 <img src="./screenshot.png">

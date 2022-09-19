@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { SearchBoxComponent } from './searchBox.component';
 import { MoviesService } from './movies.service';
 import { MoviesComponent } from './movies.component';
@@ -14,7 +15,8 @@ import { Observable, Subscription } from 'rxjs';
     SearchBoxComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     MoviesService
