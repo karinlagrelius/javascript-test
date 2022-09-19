@@ -1,6 +1,6 @@
 import {Observable, Subscription} from 'rxjs';
 import {MoviesService} from './movies.service';
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, ViewChild} from '@angular/core';
 // import {MatInputModule} from '@angular/material/input';
 
 
@@ -12,12 +12,10 @@ import {Component, OnDestroy} from '@angular/core';
       <li *ngFor="let movie of movies">
         <div style="padding: 10px; background: #F0F0F0; border-radius: 25px; width: 200px;">
           Title: {{movie.title}}
-          <br>
-          Grade:  <form action="{{updateGrade(movie.id, movie.grade)}}" oninput="" id="{{movie.title}}">
-                    <input type="range" name="grade" value="{{movie.grade}}" max="5">
-                    <output name="newGrade" for="grade"></output>
-                    <input type="submit">
-                  </form>
+        <br>
+        Grade: {{movie.grade}}
+              <input #range type="range" name="grade" value={{movie.grade}} max="5">
+              <button (click)="updateGrade(movie.id, range.value)"> Update </button>
         </div>
         <br>
       </li>
@@ -30,10 +28,7 @@ export class MoviesComponent implements OnDestroy {
   subscription: Subscription;
   grade: number = 0;
   movies: {id: number, grade: number, title: string}[];
-  // gradeChange = this.formBuilder.group({
-  //    grade: '',
-  //    id: ''
-  //  });
+
   constructor(private movieService: MoviesService) { // initiate service so we can unit test, otherwise too tightly coupled
     this.movies = [];
     this.subscription = movieService.getMovies().subscribe((resp) => {
@@ -44,7 +39,8 @@ export class MoviesComponent implements OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateGrade(id: number, grade: number){
-    console.log("update grade of movie " + id + " to " + grade);
+  updateGrade(movieId: number, newGrade: string){
+    console.log("gonna change a grade! sending to service");
+    this.movieService.updateGradeDB(movieId, parseInt(newGrade));
   }
 }

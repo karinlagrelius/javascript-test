@@ -19,12 +19,10 @@ export class MoviesService {
     console.log(this.filteredMovies);
   }
 
-  changeGrade(){
-    // Args: id, newGrade
-
-    // update this.movies
-    // update this.filteredMovies
-    // update database
+  updateGradeDB(movieId: number, newGrade: number){
+    console.log("about to change " + this.movies[movieId-1].title + " to " + newGrade);
+    this.movies[movieId-1].grade = newGrade;
+    // update database TODO
   }
 
   getMovies(){
