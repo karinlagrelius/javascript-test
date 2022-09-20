@@ -14,7 +14,7 @@ import {Component, OnDestroy, ViewChild} from '@angular/core';
           Title: {{movie.title}}
         <br>
         Grade: {{movie.grade}}
-              <input #range type="range" name="grade" value={{movie.grade}} max="5">
+              <input #range type="range" name="grade" value={{movie.grade}} max="5" min="1">
               <button (click)="updateGrade(movie.id, range.value)"> Update </button>
         </div>
         <br>
