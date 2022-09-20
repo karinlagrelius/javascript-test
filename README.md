@@ -19,7 +19,7 @@ Feature set:
 
 ## Getting started
 
-With json-server in one terminal from app repository:
+With json-server in one terminal from rottenBananas/src/app repository:
 ```
 json-server --watch db.json
 ```
